@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Drum Kit</title>
+  <link rel="stylesheet" href="morphstyle.css">
+  <title>NeoMorphism</title>
+</head>
+<body>
+
+<div class="general">
+    <section>
+        <h2>Press (A)</h2>
+        <div data-key="65" class="neumorphic key">
+        <span><strong>Clap</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (Z)</h2>
+        <div data-key="90" class="neumorphic key">
+        <span><strong>Hihat</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (E)</h2>
+        <div data-key="69" class="neumorphic key">
+        <span><strong>Kick</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (R)</h2>
+        <div data-key="82" class="neumorphic key">
+        <span><strong>Openhat</strong></span>
+        </div>
+    </section>
+    
+    <section>
+        <h2>Press (T)</h2>
+        <div data-key="84" class="neumorphic key">
+        <span><strong>Boom</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (Y)</h2>
+        <div data-key="89" class="neumorphic key">
+        <span><strong>Ride</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (U)</h2>
+        <div data-key="85" class="neumorphic key">
+        <span><strong>Snare</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (I)</h2>
+        <div data-key="73" class="neumorphic key">
+        <span><strong>Tom</strong></span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Press (O)</h2>
+        <div data-key="79" class="neumorphic key">
+        <span><strong>Tink</strong></span>
+        </div>
+    </section>
+</div>
+
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="90" src="sounds/hihat.wav"></audio>
+  <audio data-key="69" src="sounds/kick.wav"></audio>
+  <audio data-key="82" src="sounds/openhat.wav"></audio>
+  <audio data-key="84" src="sounds/boom.wav"></audio>
+  <audio data-key="89" src="sounds/ride.wav"></audio>
+  <audio data-key="85" src="sounds/snare.wav"></audio>
+  <audio data-key="73" src="sounds/tom.wav"></audio>
+  <audio data-key="79" src="sounds/tink.wav"></audio>
+
+  <script>
+    function removeTransition(e) {
+      if (e.propertyName !== 'transform') return;
+      e.target.classList.remove('playing');
+    }
+  
+    function playSound(e) {
+      const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+      const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+      if (!audio) return;
+  
+      key.classList.add('playing');
+      audio.currentTime = 0;
+      audio.play();
+    }
+  
+    const keys = Array.from(document.querySelectorAll('.key'));
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+    window.addEventListener('keydown', playSound);
+  </script>
+
+</body>
+</html>

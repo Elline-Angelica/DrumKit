@@ -7,9 +7,10 @@
 </head>
 <body>
 
+
   <div class="keys">
     <div data-key="65" class="key">
-      <kbd><span><strong>A</strong></span></kbd>
+      <kbd>A</kbd>
       <span class="sound">clap</span>
     </div>
     <div data-key="90" class="key">
@@ -46,15 +47,15 @@
     </div>
   </div>
 
-  <audio data-key="65" src="clap.wav"></audio>
-  <audio data-key="90" src="hihat.wav"></audio>
-  <audio data-key="69" src="kick.wav"></audio>
-  <audio data-key="82" src="openhat.wav"></audio>
-  <audio data-key="84" src="boom.wav"></audio>
-  <audio data-key="89" src="ride.wav"></audio>
-  <audio data-key="85" src="snare.wav"></audio>
-  <audio data-key="73" src="tom.wav"></audio>
-  <audio data-key="79" src="tink.wav"></audio>
+  <audio data-key="65" src="sounds/clap.wav"></audio>
+  <audio data-key="90" src="sounds/hihat.wav"></audio>
+  <audio data-key="69" src="sounds/kick.wav"></audio>
+  <audio data-key="82" src="sounds/openhat.wav"></audio>
+  <audio data-key="84" src="sounds/boom.wav"></audio>
+  <audio data-key="89" src="sounds/ride.wav"></audio>
+  <audio data-key="85" src="sounds/snare.wav"></audio>
+  <audio data-key="73" src="sounds/tom.wav"></audio>
+  <audio data-key="79" src="sounds/tink.wav"></audio>
 
 <script>
   function removeTransition(e) {
@@ -77,6 +78,7 @@
   window.addEventListener('keydown', playSound);
 </script>
 
+  <!-- Reviewed by Dieter -->
 
 </body>
 </html>
