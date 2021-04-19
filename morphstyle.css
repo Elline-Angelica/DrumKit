@@ -9,7 +9,7 @@ body {
     margin: 0 auto;
   }
   
-  .general {
+  .key_options {
     display: flex;
     flex: 1;
     min-height: 100vh;
